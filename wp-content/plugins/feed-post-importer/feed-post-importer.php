@@ -41,8 +41,8 @@ function import_posts_from_feed() {
     $feed_url = 'https://www.nbcnewyork.com/?rss=y&most_recent=y';  
     $rss = fetch_feed($feed_url);
     // Check for errors
-    if (is_wp_error($feed_url)) {
-        echo 'Error fetching RSS feed: ' . esc_html($feed_url->get_error_message());
+    if (is_wp_error($rss)) {
+        echo 'Error fetching RSS feed: ' . esc_html($rss->get_error_message());
         return;
     }
 
